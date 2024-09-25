@@ -1,0 +1,2 @@
+RewriteEngine On
+RewriteRule ^v2/(.*)$ api.php/v2/$1 [L]

@@ -1,0 +1,132 @@
+{
+    "info": {
+        "_postman_id": "d982b0f7-0281-4f1f-bb8c-d28cd9e02812",
+        "name": "Blog Management API",
+        "description": "Koleksi untuk API Manajemen Blog dengan Bearer Token autentikasi.",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Pendaftaran Pengguna",
+            "request": {
+                "url": "http://127.0.0.1:1337/blog/api.php/v2/register",
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json",
+                        "description": ""
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\"username\":\"nama_pengguna\",\"password\":\"kata_sandi\"}"
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Login Pengguna",
+            "request": {
+                "url": "http://127.0.0.1:1337/blog/api.php/v2/login",
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json",
+                        "description": ""
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\"username\":\"nama_pengguna\",\"password\":\"kata_sandi\"}"
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Daftar Blog Pengguna",
+            "request": {
+                "url": "http://127.0.0.1:1337/blog/api.php/v2/blog",
+                "method": "GET",
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer {{token}}",
+                        "description": "Masukkan token autentikasi di sini"
+                    }
+                ]
+            },
+            "response": []
+        },
+        {
+            "name": "Buat Blog",
+            "request": {
+                "url": "http://127.0.0.1:1337/blog/api.php/v2/blog",
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json",
+                        "description": ""
+                    },
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer {{token}}",
+                        "description": "Masukkan token autentikasi di sini"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\"title\":\"Judul Blog\",\"content\":\"Konten blog di sini.\"}"
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Perbarui Blog",
+            "request": {
+                "url": "http://127.0.0.1:1337/blog/api.php/v2/blog/1",
+                "method": "PUT",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json",
+                        "description": ""
+                    },
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer {{token}}",
+                        "description": "Masukkan token autentikasi di sini"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\"title\":\"Judul Blog Diperbarui\",\"content\":\"Konten yang diperbarui di sini.\"}"
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Hapus Blog",
+            "request": {
+                "url": "http://127.0.0.1:1337/blog/api.php/v2/blog/1",
+                "method": "DELETE",
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer {{token}}",
+                        "description": "Masukkan token autentikasi di sini"
+                    }
+                ]
+            },
+            "response": []
+        }
+    ],
+    "variable": [
+        {
+            "key": "token",
+            "value": ""
+        }
+    ]
+}
